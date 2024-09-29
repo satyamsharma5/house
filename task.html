@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🏠 House Management - Tasks</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/tasks">Tasks</a></li>
+                <li><a href="/payments">Rent Payments</a></li>
+                <li><a href="/maintenance">Maintenance</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Tasks List</h2>
+            <ul>
+                {% for task in tasks %}
+                    <li>{{ task }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Add a New Task</h3>
+            <form action="/add_task" method="POST">
+                <input type="text" name="task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 House Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
